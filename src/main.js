@@ -19,8 +19,8 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
- axios({
-     url:'http://123.207.32.32:8000/home/multidata'
- }).then((data) =>{
-   console.log(data)
- })
+//  axios({
+//      url:'http://123.207.32.32:8000/home/multidata'
+//  }).then((data) =>{
+//    console.log(data)
+//  })

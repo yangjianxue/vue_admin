@@ -41,11 +41,20 @@
 </template>
 
 <script>
-    import baseFn from '../assets/js/common.js'
+    import {http} from '../http/index.js'
+    import baseFn from '../assets/js/utils.js'
     
     export default {
         name: "Login",
-        mounted(){
+        created(){
+            http({// url:'http://123.207.32.32:8000/home/multidata'
+                url:'/login',
+                method:'post',
+                headers:{'Content-Type':'application/x-www-form-urlencoded'},
+                data:{id:11}
+            }).then( res =>{
+                console.log(res)
+            })
         },
         data(){
             //验证邮箱
@@ -129,12 +138,12 @@
             //tab切换
             handleClick(tab, event) {
                 this.curMenu = tab.name;
-                console.log(tab, event);
             },
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         alert('submit!');
+                        console.log(axios)
                     } else {
                         console.log('error submit!!');
                         return false;
@@ -150,12 +159,13 @@
         width:100%;
         height:100vh;
         background:#1b235f;
-        // display:flex;
+        display:flex;
         color:#fff;
     }
     .loginWrap{
         margin:auto;
         width:400px;
+        height:510px;
         .menuTab{
             li{
                 display:inline-block;

@@ -6,5 +6,5 @@
 
 
 <style lang="scss">
-    @import './assets/css/common.scss';
+    @import './assets/css/base.scss';
 </style>

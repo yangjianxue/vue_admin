@@ -1,0 +1,13 @@
+@import './common.scss';
+
+.dp_b{
+    display: block;
+}
+.clearfix:after{
+  content:' ';
+  clear:both;
+  display:block;
+  width:0;
+  height:0;
+  visibility:hidden;
+}
