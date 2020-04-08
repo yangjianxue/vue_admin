@@ -1,6 +1,12 @@
 <template>
     <div class="login">
+        <!-- <div class="box box1"></div>
+        <div class="box">
+            <div class="con"></div>
+        </div>
+        <div class="box box1"></div> -->
         <div class="loginWrap">
+            
             <ul class="menuTab clearfix">
                 <li v-for="(menu) in menuTab" :key="menu.id" @click="handleClick(menu)" :class="{'active':curMenu == menu.name}">{{menu.txt}}</li>
             </ul>
@@ -47,11 +53,20 @@
     export default {
         name: "Login",
         created(){
+            // http({// url:'http://123.207.32.32:8000/home/multidata'
+            //     url:'/login',
+            //     method:'get',
+            //     headers:{'Content-Type':'application/x-www-form-urlencoded'},
+            //     params:{id:11}
+            // }).then( res =>{
+            //     console.log(res)
+            // })
+
             http({// url:'http://123.207.32.32:8000/home/multidata'
                 url:'/login',
                 method:'post',
                 headers:{'Content-Type':'application/x-www-form-urlencoded'},
-                data:{id:11}
+                data:{id:12}
             }).then( res =>{
                 console.log(res)
             })
@@ -162,6 +177,29 @@
         display:flex;
         color:#fff;
     }
+    // .box{
+    //     // width:100px;
+    //     // height:100px;
+    //     background:#f00;
+    //     flex:1
+    //     // flex-grow:1;
+    //     // flex-shrink:1;
+    //     // flex-basis:1
+        
+    // }
+
+    // .con{
+    //         width:100px;
+    //         height:3000px;
+    //         background:green;
+    //     }
+    // .box1{
+    //     width:100px;
+    //     // height:100px;
+    //     background:yellow;
+    //     flex:none
+    //     // flex:auto
+    // }
     .loginWrap{
         margin:auto;
         width:400px;
